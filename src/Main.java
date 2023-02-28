@@ -8,7 +8,7 @@ public class Main {
         Random r = new Random();
 
         String[] options = {
-                "Skæri", "Blað", "Steinn"
+                "skæri", "blað", "steinn"
         };
 
         System.out.println("Vinsamlegast velja skæri, blað eða stein.");
@@ -17,7 +17,7 @@ public class Main {
         String val = s.next();
 
         //býr til val tölvu
-        int TolvaChoiceIndex = r.nextInt(3);
+        int TolvaChoiceIndex = r.nextInt(options.length);
         String TolvaChoice = options[TolvaChoiceIndex];
 
         //Sýna hvað spilariof tölva völdu
@@ -25,10 +25,10 @@ public class Main {
         System.out.println("Tölvan valdi " + TolvaChoice + ".");
 
         if (val.equals(TolvaChoice)) {
-            System.out.println("It's a tie!");
-        } else if (val.equals("steinn") && TolvaChoice.equals("skæri")
-                || val.equals("blað") && TolvaChoice.equals("steinn")
-                || val.equals("skæri") && TolvaChoice.equals("blað")) {
+            System.out.println("jafnt!");
+        } else if ((val.equals("steinn") && TolvaChoice.equals("skæri"))
+                || (val.equals("blað") && TolvaChoice.equals("steinn"))
+                || (val.equals("skæri") && TolvaChoice.equals("blað"))) {
             System.out.println("Þú vannst! :)");
         } else {
             System.out.println("Tölvan vann! :(");
